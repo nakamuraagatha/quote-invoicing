@@ -7,4 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 City.create([{ name: 'Ottawa' }, { name: 'Toronto' }, { name: 'Vancouver' }, { name: 'Montreal' }])
-Role.create([{ name: 'Customer', slug: 'customer' }, { name: 'Admin', slug: 'admin' }])

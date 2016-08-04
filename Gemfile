@@ -45,7 +45,7 @@ group :development do
 end
 
 
-gem 'mysql2', '~> 0.3.20'
+gem 'mysql2'
 gem 'mini_magick'
 gem 'sidekiq'
 gem 'stripe'
