@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
       @items = Item.all
       render 'items/index'
     else
-      flash[:error] = @quote.errors.full_messages.join('\n').html_safe
+      flash[:error] = @item.errors.full_messages.join('\n').html_safe
       render 'items/new'
     end
 
@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     if @item.update(permitted_item_params)
       flash[:success] = t("items.update.success")
     else
-      flash[:error] = @quote.errors.full_messages.join('\n').html_safe
+      flash[:error] = @item.errors.full_messages.join('\n').html_safe
     end
     render 'items/edit'
   end

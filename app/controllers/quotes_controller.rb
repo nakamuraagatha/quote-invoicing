@@ -18,6 +18,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new(permitted_quote_params.merge(user_id: current_user.id))
     if @quote.save
       flash[:success] = t("quotes.create.success")
+      render 'quotes/index'
     else
       flash[:error] = @quote.errors.full_messages.join('\n').html_safe
       render 'quotes/new'
