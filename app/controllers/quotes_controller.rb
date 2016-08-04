@@ -50,7 +50,7 @@ class QuotesController < ApplicationController
   def can_access_quote
     unless current_user_is_admin? or current_user.quotes.exists?(id: params[:id])
       respond_to do |format|
-        format.js { render :file => 'quotes/errors/access' }
+        format.html { render :file => 'quotes/errors/access' }
       end
     end
   end
@@ -58,7 +58,7 @@ class QuotesController < ApplicationController
   def can_destroy_quote
     unless current_user_is_admin?
       respond_to do |format|
-        format.js { render :file => 'quotes/errors/access' }
+        format.html { render :file => 'quotes/errors/access' }
       end
     end
   end

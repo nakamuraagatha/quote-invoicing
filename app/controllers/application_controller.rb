@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def verify_admin
     unless current_user_is_admin?
       respond_to do |format|
-        format.js { render :file => 'errors/unauthorized' }
+        format.html { render :file => 'errors/unauthorized' }
       end
     end
   end
