@@ -1,5 +1,5 @@
 == README
 
 - Rails 4 App that allows to receive quotes from users, create invoices, and manage inventory items/customers.
-- Permission based-access — Edit
+- Permission based-access
 
