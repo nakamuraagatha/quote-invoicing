@@ -1,0 +1,20 @@
+<%= simple_form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.error_span(:name) %>
+
+  <%= f.input :description %>
+  <%= f.error_span(:description) %>
+
+  <div class="form-group item_image">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.error_span(:image) %>
+  </div>
+
+  <%= f.input :price %>
+  <%= f.error_span(:price) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                items_path, :class => 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: password
+  host: localhost
+  wait_timeout: 300
+
+development:
+  <<: *default
+  database: quote_invoicing
+
+test:
+  <<: *default
+  database: quote_invoicing
+
+production:
+  <<: *default
+  database: quote_invoicing

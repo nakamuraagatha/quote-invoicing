@@ -1,0 +1,18 @@
+<%= simple_form_for @invoice, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :total %>
+
+  <%= f.input 'Customer' do %>
+    <%= f.select :user_id, User.all.map { |u| [u.email, u.id] }, include_blank: true %>
+  <% end %>
+  <%= f.input 'Attach Quote' do %>
+    <%= f.select :quote_id, Quote.all.map { |q| [q.name, q.id] }, include_blank: true %>
+  <% end %>
+
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invoices_path, :class => 'btn btn-default' %>
+<% end %>

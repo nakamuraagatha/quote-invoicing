@@ -1,0 +1,11 @@
+.text-red {
+    color: red;
+}
+
+.has-error {
+    /*display:none;*/
+}
+
+textarea.form-control {
+    height: 114px !important;
+}
