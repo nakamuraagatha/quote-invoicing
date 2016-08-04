@@ -55,3 +55,5 @@ en:
       destroy:
         success: 'Invoice successfully deleted'
         error: 'Invoice could not be deleted'
+  customers:
+    title: 'Customers'
