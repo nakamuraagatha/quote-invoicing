@@ -7,7 +7,7 @@ class QuotesController < ApplicationController
   before_filter :set_quote, :only => [:edit, :update, :destroy]
 
   def index
-    @quotes = current_user.quotes
+    @quotes = current_user_is_admin? ? Quote.all : current_user.quotes
   end
 
   def new
@@ -18,7 +18,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new(permitted_quote_params.merge(user_id: current_user.id))
     if @quote.save
       flash[:success] = t("quotes.create.success")
-      @quotes = current_user.quotes
+      @quotes = current_user_is_admin? ? Quote.all : current_user.quotes
       render 'quotes/index'
     else
       flash[:error] = @quote.errors.full_messages.join('\n').html_safe
