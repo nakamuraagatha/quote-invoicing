@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_is_admin?
-    current_user.role == 'admin'
+    current_user.role_slug == 'admin'
   end
 
   def verify_admin
